@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/@microsoft/mgt@3/dist/bundle/mgt-loader.js"></script>
+        <!-- trimmed for brevity -->
+        <style>
+            body {
+            background-color: var(--fill-color);
+            color: var(--neutral-foreground-rest);
+            }
+            mgt-login {
+                --login-signed-in-background: slategrey;
+                --login-button-padding: 30px;
+                --login-popup-text-color: slategrey;
+              }
+              mgt-agenda {
+                --agenda-header-font-size: 24px;
+                --agenda-event-padding: 20px;
+                --agenda-event-background-color: slategrey;
+                --agenda-event-box-shadow: grey;
+              }
+        </style>
+        
+    </head>
+    <body>
+        <mgt-msal2-provider client-id="1bccc4c4-5ed5-46c0-b6be-b7278b19a3b0"></mgt-msal2-provider>
+
+
+        <!-- trimmed for brevity -->
+        <mgt-theme-toggle></mgt-theme-toggle>
+
+        <mgt-login></mgt-login>
+
+        
+        <mgt-agenda></mgt-agenda>
+
+        <mgt-tasks></mgt-tasks>
+
+        <p>Co-worker Picker</p>
+        <mgt-people-picker></mgt-people-picker>
+
+        <p>Management Picker</p>
+
+        <style>
+            mgt-agenda {
+              --agenda-header-color: blue;
+              --agenda-event-time-color: blue;
+              --agenda-event-subject-color: blue;
+              --agenda-event-location-color: blue;
+            }
+          </style>
+
+        <div id="graph">
+            <mgt-people-picker></mgt-people-picker>
+        </div>
+        <script>
+            let region = document.getElementById('graph');
+            mgt.applyTheme('dark', region);
+        </script>
+
+    </body>
+</html>
